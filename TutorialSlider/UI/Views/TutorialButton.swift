@@ -12,7 +12,7 @@ class TutorialButton: UIView {
     
     @IBOutlet private weak var labelButton: UILabel?
     @IBOutlet private weak var imageButton: UIImageView?
-    @IBOutlet weak var contentView: UIView?
+    @IBOutlet private weak var contentView: UIView?
     
     var changeButtonLabel: ((TutorialButton) -> ())?
     

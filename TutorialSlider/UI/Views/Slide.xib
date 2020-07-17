@@ -8,17 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Slide" customModule="TutorialSlider" customModuleProvider="target">
-            <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="TrC-Dt-SGm"/>
-                <outlet property="titleLabel" destination="jA7-JH-DXJ" id="DRq-3D-pen"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Slide" customModule="TutorialSlider" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Slide" customModule="TutorialSlider" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2wE-5C-aRU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбирете блюдо, продукт или французский специалитет, который Вас интересует" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA7-JH-DXJ">
                     <rect key="frame" x="33" y="110" width="348" height="86"/>
                     <color key="backgroundColor" red="0.20784313730000001" green="0.51764705879999995" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -29,13 +27,22 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="2wE-5C-aRU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CYt-K3-H5H"/>
+                <constraint firstAttribute="trailing" secondItem="2wE-5C-aRU" secondAttribute="trailing" id="SVV-X7-uV6"/>
                 <constraint firstItem="jA7-JH-DXJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="33" id="VSQ-JN-2rC"/>
                 <constraint firstAttribute="trailing" secondItem="jA7-JH-DXJ" secondAttribute="trailing" constant="33" id="XS0-pW-Ia8"/>
                 <constraint firstItem="jA7-JH-DXJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aIS-Kt-MoA"/>
+                <constraint firstAttribute="bottom" secondItem="2wE-5C-aRU" secondAttribute="bottom" id="gjP-5e-OgS"/>
                 <constraint firstItem="jA7-JH-DXJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="110" id="nSn-iv-Cih"/>
+                <constraint firstItem="2wE-5C-aRU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="v4T-SA-9JH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="contentView" destination="-1" id="oHP-6G-Yx6"/>
+                <outlet property="imageView" destination="2wE-5C-aRU" id="WSU-vJ-TdA"/>
+                <outlet property="titleLabel" destination="jA7-JH-DXJ" id="AHc-5Z-Gpu"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="127.90178571428571"/>
         </view>
     </objects>
