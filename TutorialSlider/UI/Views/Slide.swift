@@ -12,7 +12,13 @@ class Slide: UIView {
     
     @IBOutlet weak var contentView: UIView?
     @IBOutlet weak var titleLabel: UILabel?
+    
+    var setTextLabel: ((Slide) -> ())?
 
+    override class func awakeFromNib() {
+        
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initNib()
