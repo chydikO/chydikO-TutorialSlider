@@ -29,7 +29,7 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
     //MARK: - override
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        navigationController?.setNavigationBarHidden(true, animated: false)
         setupSlideScrollView(slides: slides)
         setupPageControl()
         setupButtonAction()
