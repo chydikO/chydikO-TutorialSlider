@@ -23,13 +23,46 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
     
     var slides = Slide.createSlides()
     
+    //MARK: - override
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = true
         
         setupSlideScrollView(slides: slides)
+        setupPageControl()
+        setupButtonAction()
         
+//        scrollView?.contentSize.height = 1.0 // disable vertical scroll
+//        scrollView?.showsVerticalScrollIndicator = false
+//        scrollView?.showsHorizontalScrollIndicator = false
+    }
+    
+    //MARK: - Private
+    private func setupSlideScrollView(slides : [Slide]) {
+        if let scrollView = scrollView {
+            scrollView.frame = CGRect(x: 0,
+                                      y: 0,
+                                      width: view.frame.width,
+                                      height: scrollView.frame.height)
+            scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count),
+                                            height: scrollView.frame.height)
+            scrollView.isPagingEnabled = true
+            
+            for i in 0 ..< slides.count {
+                slides[i].frame = CGRect(x: view.frame.width * CGFloat(i),
+                                         y: 0,
+                                         width: view.frame.width,
+                                         height: scrollView.frame.height)
+                scrollView.addSubview(slides[i])
+            }
+            scrollView.contentSize.height = 1.0 // disable vertical scroll
+            scrollView.showsVerticalScrollIndicator = false
+            scrollView.showsHorizontalScrollIndicator = false
+        }
+    }
+    
+    private func setupPageControl() {
         if let pageControl = pageControl {
             pageControl.numberOfPages = slides.count
             pageControl.currentPage = 0
@@ -39,10 +72,9 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
             
             view.bringSubviewToFront(pageControl)
         }
-        scrollView?.contentSize.height = 1.0 // disable vertical scroll
-        scrollView?.showsVerticalScrollIndicator = false
-        scrollView?.showsHorizontalScrollIndicator = false
-        
+    }
+    
+    private func setupButtonAction() {
         if let customButton = customButton {
             customButton.onButtonClicked = { [weak self] _ in
                 if
@@ -62,26 +94,6 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
                     // Start Login
                     debugPrint("Start Login")
                 }
-            }
-        }
-    }
-    
-    private func setupSlideScrollView(slides : [Slide]) {
-        if let scrollView = scrollView {
-            scrollView.frame = CGRect(x: 0,
-                                      y: 0,
-                                      width: view.frame.width,
-                                      height: scrollView.frame.height)
-            scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count),
-                                            height: scrollView.frame.height)
-            scrollView.isPagingEnabled = true
-            
-            for i in 0 ..< slides.count {
-                slides[i].frame = CGRect(x: view.frame.width * CGFloat(i),
-                                         y: 0,
-                                         width: view.frame.width,
-                                         height: scrollView.frame.height)
-                scrollView.addSubview(slides[i])
             }
         }
     }
