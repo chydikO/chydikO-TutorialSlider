@@ -14,7 +14,13 @@ class TutorialButton: UIView {
     @IBOutlet private weak var imageButton: UIImageView?
     @IBOutlet private weak var contentView: UIView?
     
-    var changeButtonLabel: ((TutorialButton) -> ())?
+    var textToButtonLabel: String = "" {
+        didSet{
+            labelButton?.text = textToButtonLabel
+        }
+    }
+
+    var onButtonClicked: ((TutorialButton) -> ())?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,12 +42,12 @@ class TutorialButton: UIView {
     }
     @IBAction private func butttonTapped() {
 
-        UIView.animate(withDuration: 0.3, delay: 0.3, options: .autoreverse, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .autoreverse, animations: {
             self.contentView?.alpha = 0.5
         }) { _ in
             self.contentView?.alpha = 1
-            self.changeButtonLabel?(self)
-            print("TutorialButton Tapped")
+            self.onButtonClicked?(self)
+            debugPrint("TutorialButton Tapped")
         }
     }
     
