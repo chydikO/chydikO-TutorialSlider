@@ -21,21 +21,18 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl?
     @IBOutlet weak var customButton: TutorialButton?
     
+    var onTutorialButtonFinished: ((TutorialController) -> ())?
+
+    
     var slides = Slide.createSlides()
     
     //MARK: - override
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBar.isHidden = true
-        
+                
         setupSlideScrollView(slides: slides)
         setupPageControl()
         setupButtonAction()
-        
-//        scrollView?.contentSize.height = 1.0 // disable vertical scroll
-//        scrollView?.showsVerticalScrollIndicator = false
-//        scrollView?.showsHorizontalScrollIndicator = false
     }
     
     //MARK: - Private
@@ -66,7 +63,6 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
         if let pageControl = pageControl {
             pageControl.numberOfPages = slides.count
             pageControl.currentPage = 0
-            
             pageControl.pageIndicatorTintColor = UIColor(red: 53/255, green: 132/255, blue: 159/255, alpha: 1)
             pageControl.currentPageIndicatorTintColor = UIColor(red: 125/255, green: 189/255, blue: 211/255, alpha: 1)
             
@@ -79,11 +75,11 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
             customButton.onButtonClicked = { [weak self] _ in
                 if
                     let pageControl = self?.pageControl,
-                    pageControl.currentPage < self?.slides.count ?? 0,
+                    let slideCount = self?.slides.count,
                     let scrollView = self?.scrollView
                 {
+                    if pageControl.currentPage < slideCount - 1 {
                     pageControl.currentPage = pageControl.currentPage + 1
-                    
                     if
                         let x = self?.slides[pageControl.currentPage].frame.origin.x,
                         let y = self?.slides[pageControl.currentPage].frame.origin.y
@@ -91,19 +87,18 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
                         scrollView.setContentOffset(CGPoint(x: x, y: y), animated: true)
                     }
                 } else {
-                    // Start Login
-                    debugPrint("Start Login")
+                        // Start Login
+                        debugPrint("Start Login")
+                        if let tutorialController = self {
+                            self?.onTutorialButtonFinished?(tutorialController)
+                        }
+                    }
                 }
             }
         }
-    }
+}
     
     //MARK: - UIScrollViewDelegate
-    /*
-     * default function called when view is scolled. In order to enable callback
-     * when scrollview is scrolled, the below code needs to be called:
-     * slideScrollView.delegate = self or
-     */
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         
