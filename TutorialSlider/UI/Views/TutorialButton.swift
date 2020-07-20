@@ -41,12 +41,14 @@ class TutorialButton: UIView {
         }
     }
     @IBAction private func butttonTapped() {
+        
+        //TODO: сделать нажатие на кнопку как на уроке
+        self.onButtonClicked?(self)
 
         UIView.animate(withDuration: 0.3, delay: 0, options: .autoreverse, animations: {
             self.contentView?.alpha = 0.5
         }) { _ in
             self.contentView?.alpha = 1
-            self.onButtonClicked?(self)
             debugPrint("TutorialButton Tapped")
         }
     }

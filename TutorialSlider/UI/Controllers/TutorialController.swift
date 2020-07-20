@@ -24,7 +24,7 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
     var onTutorialButtonFinished: ((TutorialController) -> ())?
 
     
-    var slides = Slide.createSlides()
+    var slides = SlideView.createSlides()
     
     //MARK: - override
     override func viewDidLoad() {
@@ -35,8 +35,12 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
         setupButtonAction()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true //false
+    }
+    
     //MARK: - Private
-    private func setupSlideScrollView(slides : [Slide]) {
+    private func setupSlideScrollView(slides : [SlideView]) {
         if let scrollView = scrollView {
             scrollView.frame = CGRect(x: 0,
                                       y: 0,

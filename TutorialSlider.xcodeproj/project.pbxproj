@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		687B9DE024C1A5D2004F7ABF /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B9DDF24C1A5D2004F7ABF /* Slide.swift */; };
+		6823561E24C58E200092DB66 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823561D24C58E200092DB66 /* NavigationController.swift */; };
+		687B9DE024C1A5D2004F7ABF /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B9DDF24C1A5D2004F7ABF /* SlideView.swift */; };
 		687B9DE224C1A5E1004F7ABF /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687B9DE124C1A5E1004F7ABF /* Slide.xib */; };
 		68F73F9B24C1945000A4FD6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F73F9A24C1945000A4FD6B /* AppDelegate.swift */; };
 		68F73FA424C1945200A4FD6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F73FA324C1945200A4FD6B /* Assets.xcassets */; };
@@ -19,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		687B9DDF24C1A5D2004F7ABF /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		6823561D24C58E200092DB66 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		687B9DDF24C1A5D2004F7ABF /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		687B9DE124C1A5E1004F7ABF /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		68F73F9724C1945000A4FD6B /* TutorialSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutorialSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F73F9A24C1945000A4FD6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				68F73FAE24C1949900A4FD6B /* TutorialController.swift */,
+				6823561D24C58E200092DB66 /* NavigationController.swift */,
 				68F73FB124C194B900A4FD6B /* Tutorial.storyboard */,
 			);
 			path = Controllers;
@@ -102,7 +105,7 @@
 			children = (
 				68F73FB524C19AF600A4FD6B /* TutorialButton.swift */,
 				68F73FB724C19B0500A4FD6B /* Button.xib */,
-				687B9DDF24C1A5D2004F7ABF /* Slide.swift */,
+				687B9DDF24C1A5D2004F7ABF /* SlideView.swift */,
 				687B9DE124C1A5E1004F7ABF /* Slide.xib */,
 			);
 			path = Views;
@@ -183,8 +186,9 @@
 			files = (
 				68F73F9B24C1945000A4FD6B /* AppDelegate.swift in Sources */,
 				68F73FB624C19AF600A4FD6B /* TutorialButton.swift in Sources */,
+				6823561E24C58E200092DB66 /* NavigationController.swift in Sources */,
 				68F73FAF24C1949900A4FD6B /* TutorialController.swift in Sources */,
-				687B9DE024C1A5D2004F7ABF /* Slide.swift in Sources */,
+				687B9DE024C1A5D2004F7ABF /* SlideView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
