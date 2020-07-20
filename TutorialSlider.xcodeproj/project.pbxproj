@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6823561E24C58E200092DB66 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823561D24C58E200092DB66 /* NavigationController.swift */; };
+		6823562024C590C80092DB66 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6823561F24C590C80092DB66 /* SlideModel.swift */; };
 		687B9DE024C1A5D2004F7ABF /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B9DDF24C1A5D2004F7ABF /* SlideView.swift */; };
 		687B9DE224C1A5E1004F7ABF /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687B9DE124C1A5E1004F7ABF /* Slide.xib */; };
 		68F73F9B24C1945000A4FD6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F73F9A24C1945000A4FD6B /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		6823561D24C58E200092DB66 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		6823561F24C590C80092DB66 /* SlideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
 		687B9DDF24C1A5D2004F7ABF /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		687B9DE124C1A5E1004F7ABF /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		68F73F9724C1945000A4FD6B /* TutorialSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutorialSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +50,7 @@
 		6824D07624C48B3A001C504A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6823561F24C590C80092DB66 /* SlideModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				68F73F9B24C1945000A4FD6B /* AppDelegate.swift in Sources */,
 				68F73FB624C19AF600A4FD6B /* TutorialButton.swift in Sources */,
 				6823561E24C58E200092DB66 /* NavigationController.swift in Sources */,
+				6823562024C590C80092DB66 /* SlideModel.swift in Sources */,
 				68F73FAF24C1949900A4FD6B /* TutorialController.swift in Sources */,
 				687B9DE024C1A5D2004F7ABF /* SlideView.swift in Sources */,
 			);
