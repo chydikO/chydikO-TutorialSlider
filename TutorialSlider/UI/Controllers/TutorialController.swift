@@ -56,6 +56,7 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
                                          width: view.frame.width,
                                          height: scrollView.frame.height)
                 scrollView.addSubview(slides[i])
+                slides[i].layoutIfNeeded()
             }
             scrollView.contentSize.height = 1.0 // disable vertical scroll
             scrollView.showsVerticalScrollIndicator = false
