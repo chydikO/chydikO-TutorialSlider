@@ -15,13 +15,12 @@ class SlideView: UIView {
     @IBOutlet weak var imageView: UIImageView?
     @IBOutlet weak var iconImageView: UIImageView?
     @IBOutlet weak var leadingIconLayoutConstraint: NSLayoutConstraint?
-    @IBOutlet weak var widthIconLayoutConstraint: NSLayoutConstraint?
 
         
     static func createSlides() -> [SlideView] {
         let slide1: SlideView = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! SlideView
         var frameWidth = Float(slide1.frame.width / 2)
-        slide1.leadingIconLayoutConstraint?.constant = CGFloat(frameWidth - 16)
+        slide1.leadingIconLayoutConstraint?.constant = CGFloat(frameWidth - 32)
         slide1.iconImageView?.image = UIImage(named: "FoodAndWine")
         slide1.imageView?.image = UIImage(named: "1")
         slide1.titleLabel?.text = "Выбирете блюдо, продукт или французский специалитет, который Вас интересует"

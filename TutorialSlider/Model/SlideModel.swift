@@ -12,4 +12,6 @@ struct SlideModel {
     private var title: String
     private var image: String
     private var icons: String
+    private var leadingIconLayoutConstraint: Float
+
 }
